@@ -48,7 +48,7 @@ class TicTacToe
     print_board #see method below
     player_input = gets.chomp.downcase.to_sym
       if @board.has_key?(player_input) == true #Checks to see if player inputted a string equal to a key (or game space) in the game board hash.
-        if @board[player_input] != "" #If player inputs a game space which does not have an undefined ("") value, then that space must have been moved to already.  
+        if @board[player_input] != "" #If player inputs a game space key which does not have an associated undefined ("") value, then that space must have been moved to already.  
           move_taken(player_symbol)
         else 
           @board[player_input] = player_symbol #This assigns the appropriate player_symbol as the value of the game space key the player inputted.
@@ -86,7 +86,7 @@ class TicTacToe
       end
   end
 
-  def print_board #I created this method to design a more aesthetic board than just displaying the board hash. I think the way it displays and runs in Ruby is much more user-friendly now.
+  def print_board #I created this method to design a more aesthetic board than just displaying the board hash. I think the way it displays and runs in Ruby is much more user-friendly.
     puts " --- --- ---\n"
     @board.each do |space, letter|
       case 
